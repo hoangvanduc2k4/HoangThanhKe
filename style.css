@@ -223,7 +223,7 @@ a {
 
 .hero-title-main {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     /* Reduced from 3rem */
     line-height: 1.2;
     color: #fff;
@@ -234,7 +234,7 @@ a {
 
 .hero-title-highlight {
     color: var(--color-bronze);
-    font-size: 2.5rem;
+    font-size: 2rem;
     /* Reduced from 3.5rem */
     display: block;
     /* Ensure it breaks line if needed or stands out */
@@ -254,17 +254,24 @@ a {
 }
 
 .hero-desc {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: #e0e0e0;
     margin-bottom: 30px;
     text-shadow: 1px 1px 2px #000;
+    font-weight: 700;
 }
 
 .hero-price-container {
     text-align: left;
     margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    display: inline-block;
 }
 
 .hero-price-old {
@@ -286,7 +293,8 @@ a {
 }
 
 .hero-price-amount {
-    color: #ff4d4d;
+    color: #FFD700;
+    /* Gold */
     font-size: 3.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px #000;
@@ -651,6 +659,152 @@ a {
     }
 }
 
+/* Lore Section - Suggested Update */
+.lore-section {
+    background-color: #121212;
+    /* Nền đen sâu thẳm */
+    color: #e0e0e0;
+    padding: 80px 0;
+    /* Adjusted to keep top/bottom padding but respect container width */
+    font-family: 'Times New Roman', serif;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid var(--color-bronze-dark);
+    border-bottom: 2px solid var(--color-bronze-dark);
+}
+
+/* Hiệu ứng nền mờ */
+.lore-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #2a2a2a 0%, #121212 70%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.lore-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.lore-section .section-title {
+    color: #d4af37;
+    /* Vàng kim */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lore-section .story-desc {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    border-left: 3px solid #8b0000;
+    /* Đường kẻ đỏ bên trái quote */
+    padding-left: 20px;
+    display: inline-block;
+    font-style: italic;
+    background: transparent;
+    /* Override previous if any */
+}
+
+.lore-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Chia 2 cột */
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.lore-group h3 {
+    color: #FFD700;
+    /* Vàng sáng (Bright Gold) */
+    font-size: 1.5rem;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    /* User snippet didn't specify, but implies left? Or maintain style? keeping default or user's implied */
+}
+
+.group-intro {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.lore-item {
+    background: rgba(255, 255, 255, 0.05);
+    /* Nền kính mờ */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    border-bottom: none;
+    /* Reset previous style */
+}
+
+/* Màu định danh cho 2 nhóm */
+.lore-group:first-child .lore-item {
+    border-left-color: #8b0000;
+}
+
+/* Cột Di Vật màu Đỏ */
+.lore-group:last-child .lore-item {
+    border-left-color: #d4af37;
+}
+
+/* Cột Quân Đoàn màu Vàng */
+
+.lore-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lore-item h4 {
+    color: #d4af37;
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    font-family: inherit;
+    /* Use section font */
+}
+
+.lore-quote {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lore-desc {
+    color: #bbb;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .lore-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lore-section .section-title {
+        font-size: 1.8rem;
+    }
+}
+
 /* Section 3: Rules */
 /* Section 3: Rules - Step Process */
 .rules-section {
@@ -951,7 +1105,7 @@ a {
 
 .product-desc {
     color: var(--color-parchment);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 25px;
     padding: 15px;
