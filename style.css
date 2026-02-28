@@ -187,7 +187,7 @@ a {
     width: 100%;
     animation: fadeInUp 1s ease-out;
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 0.9fr 1.3fr;
     gap: 40px;
     align-items: center;
     text-align: left;
@@ -202,29 +202,28 @@ a {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 1.8rem;
     color: var(--color-bronze);
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-shadow: 2px 2px 4px #000;
     border-bottom: 2px solid var(--color-war-red);
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
 
 .hero-text-card {
     background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    /* Reduced from 30px */
+    padding: 10px 15px;
     border-radius: 8px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(205, 127, 50, 0.3);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .hero-title-main {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    /* Reduced from 3rem */
+    font-size: 0.9rem;
+    /* Reduced from 1rem */
     line-height: 1.2;
     color: #fff;
     text-shadow: 0 0 10px rgba(205, 127, 50, 0.8), 2px 2px 4px #000;
@@ -234,8 +233,8 @@ a {
 
 .hero-title-highlight {
     color: var(--color-bronze);
-    font-size: 2rem;
-    /* Reduced from 3.5rem */
+    font-size: 1.1rem;
+    /* Reduced from 1.3rem */
     display: block;
     /* Ensure it breaks line if needed or stands out */
 }
@@ -254,20 +253,20 @@ a {
 }
 
 .hero-desc {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.4;
     color: #e0e0e0;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-shadow: 1px 1px 2px #000;
-    font-weight: 700;
 }
 
 .hero-price-container {
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     background: rgba(0, 0, 0, 0.6);
-    padding: 15px 25px;
+    padding: 5px 10px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: fit-content;
@@ -277,7 +276,7 @@ a {
 .hero-price-old {
     color: #888;
     text-decoration: line-through;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .hero-price-new {
@@ -288,14 +287,14 @@ a {
 
 .hero-price-currency {
     color: var(--color-bronze);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .hero-price-amount {
     color: #FFD700;
     /* Gold */
-    font-size: 3.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px #000;
 }
@@ -303,13 +302,13 @@ a {
 .hero-price-label {
     color: #aaa;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     margin-top: 5px;
 }
 
 .btn-hero-buy {
-    font-size: 1.2rem;
-    padding: 15px 40px;
+    font-size: 0.85rem;
+    padding: 8px 15px;
     background: linear-gradient(45deg, #800000, #a00000);
     border: 1px solid #CD7F32;
     box-shadow: 0 0 15px rgba(205, 127, 50, 0.4);
@@ -318,10 +317,10 @@ a {
 }
 
 .hero-shipping-note {
-    margin-top: 15px;
+    margin-top: 5px;
     font-style: italic;
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 /* Section 2: Hook (Features) */
@@ -666,7 +665,7 @@ a {
     color: #e0e0e0;
     padding: 80px 0;
     /* Adjusted to keep top/bottom padding but respect container width */
-    font-family: 'Times New Roman', serif;
+    font-family: var(--font-body);
     position: relative;
     overflow: hidden;
     border-top: 2px solid var(--color-bronze-dark);
@@ -802,6 +801,40 @@ a {
 
     .lore-section .section-title {
         font-size: 1.8rem;
+    }
+}
+
+/* Scroll to Top Button */
+#scrollTopBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--color-war-red);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--color-war-red-hover);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 16px;
     }
 }
 
@@ -1482,5 +1515,62 @@ a {
     .lore-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+
+/* Mobile Sticky Buy Button */
+.mobile-sticky-buy {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.98);
+    border-top: 2px solid var(--color-bronze);
+    padding: 12px 20px;
+    z-index: 1000;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-price .old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.mobile-price .new-price {
+    color: #FFD700;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    text-shadow: 1px 1px 2px #000;
+    line-height: 1.2;
+}
+
+.mobile-sticky-buy .btn-buy {
+    background: linear-gradient(45deg, #800000, #a00000);
+    border: 1px solid #CD7F32;
+    box-shadow: 0 0 10px rgba(205, 127, 50, 0.4);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-buy {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 75px;
+        /* offset for sticky button so footer is visible */
     }
 }

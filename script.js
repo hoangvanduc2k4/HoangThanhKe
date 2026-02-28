@@ -160,4 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlides(slideIndex);
         startTimer();
     }
+
+    // 6. Scroll to Top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    if (scrollTopBtn) {
+        // Show the button when scrolling down 300px from top
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        });
+
+        // Scroll to top when clicked
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 });
